@@ -19,65 +19,50 @@
     font-weight: 500 !important;
 }
 
-
-.theme-HeaderPanel {
-    background-color: var(--theme-black);
-    color: var(--theme-white);
-    height: 44px;
-    -webkit-box-shadow: 0px 4px 14px -4px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 4px 14px -4px rgba(0,0,0,0.75);
-    box-shadow: 0px 4px 14px -4px rgba(0,0,0,0.75);
-    z-index: 1;
+html, body, .viewport {
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
-.theme-HeaderHorizontalSeparator {
-    height: 2px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,cccccc+50,000000+99 */
-    background: #000000; /* Old browsers */
-    background: -moz-linear-gradient(left, #000000 0%, #cccccc 50%, #000000 99%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #000000 0%,#cccccc 50%,#000000 99%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #000000 0%,#cccccc 50%,#000000 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */}
-
-.theme-PopupPanel {
-    -webkit-box-shadow: 0px 4px 14px -4px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 4px 14px -4px rgba(0,0,0,0.75);
-    box-shadow: 0px 4px 14px -4px rgba(0,0,0,0.75);
+.vbox {
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
 }
 
-.theme-NavItem, .theme-NavItemIconOnly, .theme-NavItemMain {
-    background: var(--theme-black) !important;
-    color: var(--theme-lightgreen) !important;
-    padding: 0 !important;
-    display: block;
-    height: 32px;
-    line-height: 32px;
-    border-radius: 0.1em;
-    text-transform: uppercase;
+.hbox {
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
 }
 
-.theme-NavItemMain {
-    /*
-    height: 44px;
-    line-height: 44px;
-    margin: 0 2em 0 0;
-    font-size: 1.44em;
-    font-weight:bold;
-    font-variant: small-caps;
-    */
+.space-between {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
 }
 
-.theme-NavItemIconOnly i {
-    margin: 0 !important;;
-    padding: 0 !important;;
+header, footer {
+    height: 100px;
+    background: lightcoral;
+    color: white;
 }
 
-.theme-NavItem.active, .theme-NavItemMain.active {
-    font-weight: bold;
-    border-bottom: 2px solid var(--theme-lightgreen);
+.main {
+    -webkit-flex: 1;
+    flex: 1;
 }
 
-.theme-SidePanel {
-    background-color: var(--theme-brightgrey);
-    color: var(--theme-black);
+article {
+    -webkit-flex: 5;
+    flex: 5;
 }
+
+aside, nav {
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+

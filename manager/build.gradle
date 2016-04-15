@@ -42,6 +42,14 @@ dependencies {
     compile "com.github.gwtmaterialdesign:gwt-material-addins:$gwtMaterialDesignVersion"
     compile "com.github.gwtmaterialdesign:gwt-material-themes:$gwtMaterialDesignVersion"
     compile "com.github.nmorel.gwtjackson:gwt-jackson:$gwtJacksonVersion"
+    compile "org.jboss.errai:errai-codegen-gwt:4.0.0.Beta1"
+    compile "org.jboss.errai:errai-data-binding:4.0.0.Beta1"
+    compile "org.jboss.errai:errai-navigation:4.0.0.Beta1"
+    compile "org.jboss.errai:errai-tools:4.0.0.Beta1"
+    compile "org.jboss.errai:errai-ui:4.0.0.Beta1"
+    compile "org.jboss.errai:errai-html5:4.0.0.Beta1"
+    compile "org.jboss.errai:errai-cdi-client:4.0.0.Beta1"
+    compile "org.jboss.errai:errai-bus-jsr356-websocket:4.0.0.Beta1"
 
     testCompile "junit:junit:$junitVersion"
     testCompile "org.spockframework:spock-core:$spockVersion"
@@ -95,7 +103,10 @@ tasks.withType(de.richsource.gradle.plugins.gwt.AbstractGwtActionTask) {
 
     //args "-logLevel", "TRACE"
     args "-generateJsInteropExports"
+/*
     args "-noincremental" // TODO Yep, incremental compile is apparently broken right now in 2.8.0
+    args "-noprecompile" // TODO Errai barfs weird stack traces about missing stack trace marshallers without this
+*/
 
     // I've had various problems with this cache and GWT snapshot updates, so it's a good idea to make it easily cleanable
     jvmArgs("-Dgwt.persistentunitcachedir=$project.buildDir/gwt/cache")

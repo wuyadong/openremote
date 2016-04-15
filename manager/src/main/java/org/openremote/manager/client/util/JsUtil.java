@@ -19,6 +19,8 @@
  */
 package org.openremote.manager.client.util;
 
+import org.jboss.errai.common.client.dom.HTMLElement;
+
 public class JsUtil {
 
     public native static void log(Object o) /*-{
@@ -28,5 +30,10 @@ public class JsUtil {
     public native static void printType(Object o) /*-{
         console.log(({}).toString.call(o).match(/\s([a-zA-Z]+)/)[1].toLowerCase());
     }-*/;
+
+    public native static HTMLElement querySelector(String selector) /*-{
+        return $wnd.document.querySelector(selector)
+    }-*/;
+
 
 }

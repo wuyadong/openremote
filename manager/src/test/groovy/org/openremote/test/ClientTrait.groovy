@@ -23,9 +23,9 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import org.glassfish.tyrus.client.ClientManager
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget
 import org.openremote.container.message.MessageBrokerService
-import org.openremote.manager.client.event.MessageReceivedEvent
-import org.openremote.manager.client.event.ServerSendEvent
-import org.openremote.manager.client.event.bus.EventBus
+import org.openremote.manager.clientold.event.MessageReceivedEvent
+import org.openremote.manager.clientold.event.ServerSendEvent
+import org.openremote.manager.clientold.event.bus.EventBus
 import org.openremote.manager.shared.event.Event
 import org.openremote.manager.shared.event.Message
 import org.openremote.manager.shared.http.RequestParams

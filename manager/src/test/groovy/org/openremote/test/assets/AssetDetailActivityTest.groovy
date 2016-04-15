@@ -2,9 +2,9 @@ package org.openremote.test.assets
 
 import com.google.gwt.place.shared.PlaceController
 import com.google.gwt.user.client.ui.AcceptsOneWidget
-import org.openremote.manager.client.assets.AssetDetailActivity
-import org.openremote.manager.client.assets.AssetDetailView
-import org.openremote.manager.client.event.bus.EventBus
+import org.openremote.manager.clientold.assets.AssetDetailActivity
+import org.openremote.manager.clientold.assets.AssetDetailView
+import org.openremote.manager.clientold.event.bus.EventBus
 import org.openremote.manager.server.event.EventService
 import org.openremote.test.ClientTrait
 import org.openremote.test.ContainerTrait

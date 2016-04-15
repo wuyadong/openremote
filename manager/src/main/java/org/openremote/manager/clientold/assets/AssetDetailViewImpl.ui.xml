@@ -1,0 +1,20 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:m="urn:import:gwt.material.design.client.ui">
+
+    <ui:with field="constants" type="org.openremote.manager.clientold.i18n.ManagerConstants"/>
+    <ui:with field="themeStyle" type="org.openremote.manager.clientold.ThemeStyle"/>
+
+    <g:ScrollPanel>
+        <g:VerticalPanel ui:field="contentPanel">
+
+            <g:Label>ASSET DETAILS</g:Label>
+            <g:Button ui:field="sendMessageButton" text="Send message to server"/>
+            <g:Label ui:field="messageLabel" text="Waiting for response..."/>
+
+            <g:Button ui:field="togglePopup" text="Toggle Popup"/>
+
+        </g:VerticalPanel>
+    </g:ScrollPanel>
+
+</ui:UiBinder>

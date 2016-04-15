@@ -5,6 +5,22 @@
 
     <!-- ##################################################################### -->
 
+    <inherits name="org.jboss.errai.ui.UI" />
+    <inherits name="org.jboss.errai.enterprise.CDI" />
+    <inherits name="org.jboss.errai.ui.nav.Navigation" />
+    <inherits name="elemental.Elemental"/>
+
+    <!--
+        <inherits name="org.jboss.errai.common.ErraiCommon" />
+        <inherits name="org.jboss.errai.bus.ErraiBus" />
+        <inherits name="org.jboss.errai.ioc.Container" />
+        <inherits name="org.jboss.errai.databinding.DataBinding" />
+        <inherits name="org.jboss.errai.enterprise.Jaxrs" />
+        <inherits name="org.jboss.errai.jpa.JPA" />
+        <inherits name="org.jboss.errai.jpa.sync.DataSync" />
+    -->
+
+    <!--
     <inherits name="com.google.gwt.user.User"/>
     <inherits name="elemental.Elemental"/>
     <inherits name="com.google.gwt.resources.Resources"/>
@@ -16,15 +32,18 @@
     <inherits name="com.workingflows.js.jscore.JSCore" />
     <inherits name="com.google.gwt.http.HTTP"/>
     <inherits name="com.github.nmorel.gwtjackson.GwtJackson"/>
-    <!-- TODO which of the GWT material modules do we need? -->
+    &lt;!&ndash; TODO which of the GWT material modules do we need? &ndash;&gt;
     <inherits name="gwt.material.design.GwtMaterialWithJQueryDebug"/>
     <inherits name="gwt.material.design.addins.GWTMaterialAddins"/>
+-->
 
     <!-- ##################################################################### -->
 
     <!-- This will give us shorter obfuscated CSS class names. We guarantee
          that there will be no class names that will conflict with /OR_MANAGER.+/ -->
+<!--
     <set-configuration-property name="CssResource.obfuscationPrefix" value="OR_MANAGER"/>
+-->
 
     <!-- TODO Make this switchable in Gradle build -->
     <set-property name="gwt.logging.logLevel" value="FINEST"/>
@@ -39,6 +58,8 @@
 
     <!-- ##################################################################### -->
 
+<!--
     <entry-point class="org.openremote.manager.client.ManagerEntryPoint"/>
+-->
 
 </module>
