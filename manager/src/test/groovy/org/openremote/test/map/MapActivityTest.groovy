@@ -3,11 +3,11 @@ package org.openremote.test.map
 import com.google.gwt.place.shared.PlaceController
 import com.google.gwt.user.client.ui.AcceptsOneWidget
 import elemental.json.JsonObject
-import org.openremote.manager.clientold.event.bus.EventBus
-import org.openremote.manager.clientold.map.MapActivity
-import org.openremote.manager.clientold.service.RequestServiceImpl
-import org.openremote.manager.clientold.service.SecurityService
-import org.openremote.manager.clientold.map.MapView
+import org.openremote.manager.client.event.bus.EventBus
+import org.openremote.manager.client.map.MapActivity
+import org.openremote.manager.client.service.RequestServiceImpl
+import org.openremote.manager.client.service.SecurityService
+import org.openremote.manager.client.map.MapView
 import org.openremote.manager.shared.map.MapResource
 import org.openremote.test.ClientTrait
 import org.openremote.test.ContainerTrait

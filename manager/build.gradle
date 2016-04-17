@@ -70,7 +70,7 @@ gwt {
     sourceLevel = JavaVersion.VERSION_1_8
     maxHeapSize = "1024M"
 
-    modules("org.openremote.manager.Manager")
+    modules("erraitesting.ErraiTesting")
 
     test {
         hasGwtTests = false
@@ -103,13 +103,15 @@ tasks.withType(de.richsource.gradle.plugins.gwt.AbstractGwtActionTask) {
 
     //args "-logLevel", "TRACE"
     args "-generateJsInteropExports"
-/*
-    args "-noincremental" // TODO Yep, incremental compile is apparently broken right now in 2.8.0
-    args "-noprecompile" // TODO Errai barfs weird stack traces about missing stack trace marshallers without this
-*/
+    args "-noprecompile"
 
     // I've had various problems with this cache and GWT snapshot updates, so it's a good idea to make it easily cleanable
     jvmArgs("-Dgwt.persistentunitcachedir=$project.buildDir/gwt/cache")
+}
+
+clean.doFirst {
+    // TODO Errai uses caching in superdevmode and it's a bit broken, so we must clean it sometimes
+    delete "${projectDir}/.errai/"
 }
 
 distributions {

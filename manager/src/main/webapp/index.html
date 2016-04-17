@@ -7,17 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="icon" type="image/png" href="/static/img/favicon.png" />
 
-    <script src="/static/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="/static/bower_components/polymer/polymer.html">
-
-    <link rel="import" href="/static/bower_components/paper-button/paper-button.html">
-
     <script src="/auth/js/keycloak.min.js"></script>
 
     <script>
         // TODO
         erraiBusRemoteCommunicationEnabled = false;
+/*
         erraiJaxRsJacksonMarshallingActive = true;
+*/
 
         function init() {
             /*
@@ -55,7 +52,8 @@
 
             var entrypoint = new Promise(function (resolve, reject) {
                 loadStyleSheet("/static/css/openremote.css");
-                loadScript("/static/gwt/Manager/Manager.nocache.js", resolve);
+                //loadScript("/static/gwt/Manager/Manager.nocache.js", resolve);
+                loadScript("/static/gwt/ErraiTesting/ErraiTesting.nocache.js", resolve);
             });
 
             Promise.all([
