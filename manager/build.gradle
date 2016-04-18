@@ -34,22 +34,15 @@ dependencies {
     apt "org.hibernate:hibernate-jpamodelgen:$hibernateVersion"
 
     compile "com.google.gwt:gwt-user:$gwtVersion"
-    compile("com.google.gwt.inject:gin:$ginVersion") {
-        exclude module: "cglib"
-    }
     compile "cglib:cglib:$cglibVersion"
-    compile "com.github.gwtmaterialdesign:gwt-material:$gwtMaterialDesignVersion"
-    compile "com.github.gwtmaterialdesign:gwt-material-addins:$gwtMaterialDesignVersion"
-    compile "com.github.gwtmaterialdesign:gwt-material-themes:$gwtMaterialDesignVersion"
-    compile "com.github.nmorel.gwtjackson:gwt-jackson:$gwtJacksonVersion"
-    compile "org.jboss.errai:errai-codegen-gwt:4.0.0.Beta1"
-    compile "org.jboss.errai:errai-data-binding:4.0.0.Beta1"
-    compile "org.jboss.errai:errai-navigation:4.0.0.Beta1"
-    compile "org.jboss.errai:errai-tools:4.0.0.Beta1"
-    compile "org.jboss.errai:errai-ui:4.0.0.Beta1"
-    compile "org.jboss.errai:errai-html5:4.0.0.Beta1"
-    compile "org.jboss.errai:errai-cdi-client:4.0.0.Beta1"
-    compile "org.jboss.errai:errai-bus-jsr356-websocket:4.0.0.Beta1"
+    compile "org.jboss.errai:errai-codegen-gwt:4.0.0-SNAPSHOT"
+    compile "org.jboss.errai:errai-data-binding:4.0.0-SNAPSHOT"
+    compile "org.jboss.errai:errai-navigation:4.0.0-SNAPSHOT"
+    compile "org.jboss.errai:errai-tools:4.0.0-SNAPSHOT"
+    compile "org.jboss.errai:errai-ui:4.0.0-SNAPSHOT"
+    compile "org.jboss.errai:errai-html5:4.0.0-SNAPSHOT"
+    compile "org.jboss.errai:errai-cdi-client:4.0.0-SNAPSHOT"
+    compile "org.jboss.errai:errai-bus-jsr356-websocket:4.0.0-SNAPSHOT"
 
     testCompile "junit:junit:$junitVersion"
     testCompile "org.spockframework:spock-core:$spockVersion"
@@ -70,7 +63,7 @@ gwt {
     sourceLevel = JavaVersion.VERSION_1_8
     maxHeapSize = "1024M"
 
-    modules("erraitesting.ErraiTesting")
+    modules("org.openremote.manager.Manager")
 
     test {
         hasGwtTests = false

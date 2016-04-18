@@ -5,37 +5,45 @@
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="icon" type="image/png" href="/static/img/favicon.png" />
+    <link rel="icon" type="image/png" href="/static/img/favicon.png"/>
+
+    <script src="/static/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="/static/bower_components/polymer/polymer.html">
+
+    <link rel="import" href="/static/bower_components/paper-button/paper-button.html">
+    <link rel="import" href="/static/bower_components/iron-icon/iron-icon.html">
+    <link rel="import" href="/static/bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="/static/components/ui/or-icons.html">
 
     <script src="/auth/js/keycloak.min.js"></script>
 
     <script>
         // TODO
         erraiBusRemoteCommunicationEnabled = false;
-/*
-        erraiJaxRsJacksonMarshallingActive = true;
-*/
+        /*
+         erraiJaxRsJacksonMarshallingActive = true;
+         */
 
         function init() {
             /*
-            var keycloakConfig = {
-                url: '/auth',
-                realm: window.location.pathname.split('/')[1],
-                clientId: "or-manager"
-            };
-            window.keycloak = Keycloak(keycloakConfig);
-            window.keycloak.init({onLoad: 'login-required'})
-                    .success(function (authenticated) {
-                        if (authenticated) {
-                            loadApp();
-                        } else {
-                            window.keycloak.login();
-                        }
-                    })
-                    .error(function () {
-                        alert("Failed to initialize login. Please contact your administrator.");
-                    });
-                    */
+             var keycloakConfig = {
+             url: '/auth',
+             realm: window.location.pathname.split('/')[1],
+             clientId: "or-manager"
+             };
+             window.keycloak = Keycloak(keycloakConfig);
+             window.keycloak.init({onLoad: 'login-required'})
+             .success(function (authenticated) {
+             if (authenticated) {
+             loadApp();
+             } else {
+             window.keycloak.login();
+             }
+             })
+             .error(function () {
+             alert("Failed to initialize login. Please contact your administrator.");
+             });
+             */
             loadApp();
         }
 
@@ -52,8 +60,7 @@
 
             var entrypoint = new Promise(function (resolve, reject) {
                 loadStyleSheet("/static/css/openremote.css");
-                //loadScript("/static/gwt/Manager/Manager.nocache.js", resolve);
-                loadScript("/static/gwt/ErraiTesting/ErraiTesting.nocache.js", resolve);
+                loadScript("/static/gwt/Manager/Manager.nocache.js", resolve);
             });
 
             Promise.all([

@@ -71,7 +71,11 @@ html, body, .viewport {
 }
 
 .aside {
-    background-color: var(--theme-darkgreen);
+    background-color: var(--theme-lightgreen);
     color: white;
 }
 
+.footer {
+    background-color: var(--theme-black);
+    color: white;
+}

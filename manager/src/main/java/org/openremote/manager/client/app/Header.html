@@ -1,0 +1,66 @@
+<div class="header">
+
+    <style scoped>
+        .header {
+            background: var(--theme-black);
+            align-items: center;
+            display: flex;
+        }
+
+        .north {
+            flex: 10;
+            justify-content: center;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+        }
+
+        .navigation .item {
+            cursor: pointer;
+            color: var(--theme-lightgreen);
+            padding: 0.4em;
+            white-space: nowrap;
+        }
+
+        .northWest {
+            flex: 1;
+            min-width: 15em;
+        }
+
+        .northEast {
+            flex: 1;
+            min-width: 15em;
+            justify-content: flex-end;
+        }
+
+    </style>
+
+    <div class="navigation northWest">
+        <paper-button id="navLogo" class="item">
+            <iron-icon icon="or:logo" style="width: 2.2em; height: 2.2em; margin-right: 0.5em;"></iron-icon>
+            OpenRemote
+        </paper-button>
+    </div>
+
+    <div class="navigation north">
+        <paper-button id="nav1" class="item">
+            Nav1
+        </paper-button>
+        <paper-button class="item">
+            Nav2
+        </paper-button>
+        <paper-button class="item">
+            Nav3
+        </paper-button>
+    </div>
+
+    <div class="navigation northEast">
+        <div>
+            TestUser
+        </div>
+        <iron-icon icon="account-box" style="width: 1.4em; height: 1.4em; margin: 0 0.4em 0 0.4em;"></iron-icon>
+    </div>
+
+</div>
