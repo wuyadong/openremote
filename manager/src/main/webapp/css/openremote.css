@@ -56,8 +56,8 @@ html, body, .viewport {
 .content {
     -webkit-flex: 100%;
     flex: 100%;
-    background-color: var(--theme-mediumgrey);
-    color: white;
+    background-color: var(--theme-white);
+    color: var(--theme-black);
 }
 
 .aside, .nav {

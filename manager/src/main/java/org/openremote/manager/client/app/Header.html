@@ -7,11 +7,6 @@
             display: flex;
         }
 
-        .north {
-            flex: 10;
-            justify-content: center;
-        }
-
         .navigation {
             display: flex;
             align-items: center;
@@ -22,11 +17,26 @@
             color: var(--theme-lightgreen);
             padding: 0.4em;
             white-space: nowrap;
+            border-radius: 0;
+            line-height: 2em;
         }
 
         .northWest {
-            flex: 1;
             min-width: 15em;
+        }
+
+        .north {
+            justify-content: center;
+        }
+
+        .north .item {
+            margin: 0 1.4em;
+        }
+
+        .north .item.selected {
+            background: white;
+            color: black;
+            margin-top: 4px;
         }
 
         .northEast {
@@ -39,28 +49,35 @@
 
     <div class="navigation northWest">
         <paper-button id="navLogo" class="item">
-            <iron-icon icon="or:logo" style="width: 2.2em; height: 2.2em; margin-right: 0.5em;"></iron-icon>
-            OpenRemote
+            <iron-icon icon="or:logo" style="width: 2.2em; height: 2.2em; margin-right: 0.4em;"></iron-icon>
+            Inventory
         </paper-button>
     </div>
 
     <div class="navigation north">
-        <paper-button id="nav1" class="item">
-            Nav1
+        <paper-button id="locate" class="item">
+            <iron-icon icon="maps:map" style="width: 1.4em; height: 1.4em;"></iron-icon>
+            Locate
         </paper-button>
-        <paper-button class="item">
-            Nav2
+        <paper-button id="manage" class="item selected">
+            <iron-icon icon="apps" style="width: 1.4em; height: 1.4em;"></iron-icon>
+            Manage
         </paper-button>
-        <paper-button class="item">
-            Nav3
+        <paper-button id="connect" class="item">
+            <iron-icon icon="hardware:developer-board" style="width: 1.4em; height: 1.4em;"></iron-icon>
+            Connect
         </paper-button>
     </div>
 
     <div class="navigation northEast">
-        <div>
+        <paper-button class="item">
+            <iron-icon icon="add-alert" style="width: 1.4em; height: 1.4em;"></iron-icon>
+            3
+        </paper-button>
+        <paper-button class="item" style="min-width:1em;">
             TestUser
-        </div>
-        <iron-icon icon="account-box" style="width: 1.4em; height: 1.4em; margin: 0 0.4em 0 0.4em;"></iron-icon>
+            <iron-icon icon="account-box" style="width: 1.4em; height: 1.4em;"></iron-icon>
+        </paper-button>
     </div>
 
 </div>

@@ -16,15 +16,14 @@ public class Header {
 
     @Inject
     @DataField
-    PaperButton nav1;
+    PaperButton locate;
 
     @Inject
     Navigation navigation;
 
-    @EventHandler("nav1")
+    @EventHandler("locate")
     @SinkNative(Event.ONCLICK)
-    public void onNavOne(Event event) {
-        nav1.getStyle().setProperty("color", "red");
+    public void onLocate(Event event) {
         navigation.goToWithRole(FooView.class);
     }
 
