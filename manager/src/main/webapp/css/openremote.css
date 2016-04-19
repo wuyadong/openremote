@@ -14,7 +14,7 @@
     --theme-purple: #660092; /* rgb(102, 0, 146) */
 }
 
-* html,body {
+* html, body {
     font-family: Helvetica, sans-serif !important;
     font-weight: 500 !important;
 }
@@ -27,25 +27,20 @@ html, body, .viewport {
 
 .vbox {
     display: -webkit-flex;
-    display:         flex;
+    display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
 }
 
 .hbox {
     display: -webkit-flex;
-    display:         flex;
+    display: flex;
     -webkit-flex-direction: row;
     flex-direction: row;
 }
 
 .container {
     height: 100vh;
-}
-
-.header, .footer {
-    background: lightcoral;
-    color: white;
 }
 
 .main {
@@ -60,22 +55,8 @@ html, body, .viewport {
     color: var(--theme-black);
 }
 
-.aside, .nav {
-    -webkit-flex: 250px;
-    flex: 250px;
-}
 
-.nav {
-    background-color: var(--theme-lightgreen);
-    color: white;
-}
-
-.aside {
-    background-color: var(--theme-lightgreen);
-    color: white;
-}
-
-.footer {
+.header, .footer {
     background-color: var(--theme-black);
     color: white;
 }

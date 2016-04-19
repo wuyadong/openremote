@@ -1,4 +1,4 @@
-package org.openremote.manager.client.bowercomponents.paper;
+package org.openremote.manager.client.paper;
 
 import jsinterop.annotations.JsType;
 import org.jboss.errai.common.client.api.annotations.Element;

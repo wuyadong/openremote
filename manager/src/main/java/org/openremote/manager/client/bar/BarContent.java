@@ -11,8 +11,8 @@ import org.openremote.manager.client.foo.FooView;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@LoadAsync(BarView.class)
 @Singleton
+@LoadAsync(BarView.class)
 @Templated
 public class BarContent {
 

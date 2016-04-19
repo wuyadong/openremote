@@ -3,45 +3,15 @@
 
 <module rename-to="Manager">
 
-    <!-- ##################################################################### -->
-
     <inherits name="org.jboss.errai.ui.UI" />
     <inherits name="org.jboss.errai.enterprise.CDI" />
     <inherits name="org.jboss.errai.ui.nav.Navigation" />
 
-    <!-- TODO Cleanup
-    <inherits name="com.google.gwt.user.User"/>
-    <inherits name="elemental.Elemental"/>
-    <inherits name="com.google.gwt.resources.Resources"/>
-    <inherits name="com.google.gwt.logging.Logging"/>
-    <inherits name="com.google.gwt.activity.Activity"/>
-    <inherits name="com.google.gwt.place.Place"/>
-    <inherits name="com.google.gwt.inject.Inject"/>
-    <inherits name="com.google.gwt.i18n.I18N"/>
-    <inherits name="com.workingflows.js.jscore.JSCore" />
-    <inherits name="com.google.gwt.http.HTTP"/>
-    <inherits name="com.github.nmorel.gwtjackson.GwtJackson"/>
+    <set-property name="gwt.logging.logLevel" value="ALL"/>
+    <!--
+    TODO This breaks Errai i18n/@Bundle
+    https://developer.jboss.org/thread/269343
     -->
-
-    <!-- ##################################################################### -->
-
-    <!-- This will give us shorter obfuscated CSS class names. We guarantee
-         that there will be no class names that will conflict with /OR_MANAGER.+/ -->
-    <set-configuration-property name="CssResource.obfuscationPrefix" value="OR_MANAGER"/>
-
-    <!-- TODO Make this switchable in Gradle build -->
-    <set-property name="gwt.logging.logLevel" value="FINEST"/>
     <set-property name="gwt.logging.enabled" value="TRUE"/>
-
-    <!-- TODO I18n in Errai?
-    <extend-property name="locale" values="en"/>
-    -->
-
-    <!-- ##################################################################### -->
-
-    <source path="shared"/>
-    <source path="client"/>
-
-    <!-- ##################################################################### -->
 
 </module>
