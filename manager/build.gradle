@@ -43,6 +43,7 @@ dependencies {
     compile "org.jboss.errai:errai-html5:$erraiVersion"
     compile "org.jboss.errai:errai-cdi-client:$erraiVersion"
     compile "org.jboss.errai:errai-bus-jsr356-websocket:$erraiVersion"
+    compile "com.vaadin.polymer:vaadin-gwt-polymer-elements:$vaadinElementsVersion"
 
     testCompile "junit:junit:$junitVersion"
     testCompile "org.spockframework:spock-core:$spockVersion"

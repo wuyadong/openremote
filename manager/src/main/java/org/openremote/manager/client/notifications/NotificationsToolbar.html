@@ -1,17 +1,24 @@
-<paper-button class="item">
+<div id="notificationToolbar">
 
-    <style scoped is="custom-style">
-        #notificationIcon {
-            color: var(--theme-white);
-        }
-    </style>
+    <paper-button class="item">
 
-    <iron-icon id="notificationIcon"
-               icon="info" style="width: 1.4em; height: 1.4em;"></iron-icon>
-    <paper-badge for="notificationIcon"
-                 class="redBadge"
-                 label="4">
-    </paper-badge>
+        <style scoped is="custom-style">
+            #notificationIcon {
+                color: var(--theme-white);
+            }
 
-</paper-button>
+            #notificationBadge {
+                --paper-badge-background: var(--theme-red);
+            }
+        </style>
 
+        <iron-icon id="notificationIcon"
+                   icon="info" style="width: 1.4em; height: 1.4em;"></iron-icon>
+        <paper-badge for="notificationIcon"
+                     id="notificationBadge"
+                     label="4">
+        </paper-badge>
+
+    </paper-button>
+
+</div>
