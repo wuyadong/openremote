@@ -1,6 +1,7 @@
 # OpenRemote
 
 * **Live Demo**: http://demo2.openremote.com (test/test)
+* **Live Demo**: http://demo3.openremote.com (Errai branch)
 * **Documentation/Wiki:** https://github.com/openremote/openremote/wiki
 * **Community:** https://groups.google.com/forum/#!forum/openremotecommunity
 * **Issues:** https://github.com/openremote/openremote/issues
@@ -67,8 +68,8 @@ You can extract smaller tilesets with the following procedure:
 
 ## Update demo server
 
-First build Docker images with `./gradlew buildImage`, you might want to `clean` before.
+First build Docker images with `./gradlew buildImage`, you might want to `clean` before. The image tag can be configured in `gradle.properties`.
 
-The configuration in `docker-compose-demo.yml` is prepared for our demo server deployment. You will have to change the `IDENTITY_NETWORK_HOST` and `IDENTITY_NETWORK_WEBSERVER_PORT` variables to the externally (by users) reachable hostname and port of your stack.
+The configuration in `docker-compose-demo[n].yml` is prepared for our demo server deployment. You will have to change the `IDENTITY_NETWORK_HOST` and `IDENTITY_NETWORK_WEBSERVER_PORT` variables to the externally (by users) reachable hostname and port of your stack.
 
-Deploy the whole stack with `docker-compose -f docker-compose-demo.yml [up|down]`.
+Deploy the whole stack with `docker-compose -f docker-compose-demo.yml [-p <Optional Project Name>] [up|down]`.

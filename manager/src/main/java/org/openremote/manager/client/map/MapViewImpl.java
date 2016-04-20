@@ -1,4 +1,4 @@
-package org.openremote.manager.client.bar;
+package org.openremote.manager.client.map;
 
 import org.jboss.errai.ioc.client.api.LoadAsync;
 import org.jboss.errai.ui.nav.client.local.Page;
@@ -11,13 +11,14 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import static org.openremote.manager.client.app.AppView.NavigationItem.MANAGE;
+import static org.openremote.manager.client.app.AppView.NavigationItem.CONNECT;
+import static org.openremote.manager.client.app.AppView.NavigationItem.LOCATE;
 
 @Singleton
-@LoadAsync(BarView.class)
+@LoadAsync(MapView.class)
 @Templated("../app/AppView.html")
-@Page(path = "bar", role = BarView.class)
-public class BarViewImpl extends AppView implements BarView {
+@Page(path = "map", role = MapView.class)
+public class MapViewImpl extends AppView implements MapView {
 
     @Inject
     @DataField
@@ -25,7 +26,7 @@ public class BarViewImpl extends AppView implements BarView {
 
     @Inject
     @DataField
-    BarContent content;
+    MapContent content;
 
     @PostConstruct
     @Override
@@ -40,7 +41,7 @@ public class BarViewImpl extends AppView implements BarView {
 
     @Override
     public NavigationItem getSelectedNavigationItem() {
-        return MANAGE;
+        return LOCATE;
     }
 
 }

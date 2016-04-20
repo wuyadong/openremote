@@ -6,10 +6,10 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.EventHandler;
 import org.jboss.errai.ui.shared.api.annotations.SinkNative;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
-import org.openremote.manager.client.bar.BarView;
-import org.openremote.manager.client.foo.FooView;
+import org.openremote.manager.client.assets.AssetsView;
+import org.openremote.manager.client.interop.paper.PaperButton;
+import org.openremote.manager.client.map.MapView;
 import org.openremote.manager.client.notifications.NotificationsToolbar;
-import org.openremote.manager.client.paper.PaperButton;
 
 import javax.inject.Inject;
 
@@ -40,25 +40,27 @@ public class Header {
     @EventHandler("locate")
     @SinkNative(Event.ONCLICK)
     void onLocate(Event event) {
-        navigation.goToWithRole(FooView.class);
+        navigation.goToWithRole(MapView.class);
     }
 
     @EventHandler("manage")
     @SinkNative(Event.ONCLICK)
     void onManage(Event event) {
-        navigation.goToWithRole(BarView.class);
+        navigation.goToWithRole(AssetsView.class);
     }
 
     public void setSelected(AppView.NavigationItem item) {
         locate.getClassList().remove("selected");
         manage.getClassList().remove("selected");
         connect.getClassList().remove("selected");
-        if (item.equals(LOCATE))
-            locate.getClassList().add("selected");
-        if (item.equals(MANAGE))
-            manage.getClassList().add("selected");
-        if (item.equals(CONNECT))
-            connect.getClassList().add("selected");
+        if (item != null) {
+            if (item.equals(LOCATE))
+                locate.getClassList().add("selected");
+            if (item.equals(MANAGE))
+                manage.getClassList().add("selected");
+            if (item.equals(CONNECT))
+                connect.getClassList().add("selected");
+        }
     }
 
 }

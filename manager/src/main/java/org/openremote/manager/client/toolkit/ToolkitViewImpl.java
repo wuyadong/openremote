@@ -1,4 +1,4 @@
-package org.openremote.manager.client.foo;
+package org.openremote.manager.client.toolkit;
 
 import org.jboss.errai.ioc.client.api.LoadAsync;
 import org.jboss.errai.ui.nav.client.local.DefaultPage;
@@ -15,10 +15,10 @@ import javax.inject.Singleton;
 import static org.openremote.manager.client.app.AppView.NavigationItem.LOCATE;
 
 @Singleton
-@LoadAsync(FooView.class)
+@LoadAsync(ToolkitView.class)
 @Templated("../app/AppView.html")
-@Page(path = "foo", role = {DefaultPage.class, FooView.class})
-public class FooViewImpl extends AppView implements FooView {
+@Page(path = "toolkit", role = {DefaultPage.class, ToolkitView.class})
+public class ToolkitViewImpl extends AppView implements ToolkitView {
 
     @Inject
     @DataField
@@ -26,7 +26,7 @@ public class FooViewImpl extends AppView implements FooView {
 
     @Inject
     @DataField
-    FooContent content;
+    ToolkitContent content;
 
     @PostConstruct
     @Override
@@ -41,6 +41,6 @@ public class FooViewImpl extends AppView implements FooView {
 
     @Override
     public NavigationItem getSelectedNavigationItem() {
-        return LOCATE;
+        return null;
     }
 }

@@ -1,5 +1,17 @@
 <paper-button class="item">
-    <iron-icon icon="add-alert" style="width: 1.4em; height: 1.4em;"></iron-icon>
-    3
+
+    <style scoped is="custom-style">
+        #notificationIcon {
+            color: var(--theme-white);
+        }
+    </style>
+
+    <iron-icon id="notificationIcon"
+               icon="info" style="width: 1.4em; height: 1.4em;"></iron-icon>
+    <paper-badge for="notificationIcon"
+                 class="redBadge"
+                 label="4">
+    </paper-badge>
+
 </paper-button>
 

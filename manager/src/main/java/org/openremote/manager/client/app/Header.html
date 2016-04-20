@@ -1,6 +1,6 @@
 <div class="header">
 
-    <style scoped>
+    <style scoped is="custom-style">
         .header {
             align-items: center;
             display: flex;
@@ -49,6 +49,10 @@
             -webkit-justify-content: flex-end;
         }
 
+        .item.userControl {
+            text-transform: none;
+        }
+
         #navLogo {
         }
 
@@ -78,7 +82,7 @@
 
     <div class="navigation northEast">
         <div id="notificationsToolbar"></div>
-        <paper-button class="item" style="min-width:1em;">
+        <paper-button class="item userControl" style="min-width:1em;">
             TestUser
             <iron-icon icon="account-box" style="width: 1.4em; height: 1.4em;"></iron-icon>
         </paper-button>

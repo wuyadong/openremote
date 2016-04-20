@@ -35,14 +35,14 @@ dependencies {
 
     compile "com.google.gwt:gwt-user:$gwtVersion"
     compile "cglib:cglib:$cglibVersion"
-    compile "org.jboss.errai:errai-codegen-gwt:4.0.0-SNAPSHOT"
-    compile "org.jboss.errai:errai-data-binding:4.0.0-SNAPSHOT"
-    compile "org.jboss.errai:errai-navigation:4.0.0-SNAPSHOT"
-    compile "org.jboss.errai:errai-tools:4.0.0-SNAPSHOT"
-    compile "org.jboss.errai:errai-ui:4.0.0-SNAPSHOT"
-    compile "org.jboss.errai:errai-html5:4.0.0-SNAPSHOT"
-    compile "org.jboss.errai:errai-cdi-client:4.0.0-SNAPSHOT"
-    compile "org.jboss.errai:errai-bus-jsr356-websocket:4.0.0-SNAPSHOT"
+    compile "org.jboss.errai:errai-codegen-gwt:$erraiVersion"
+    compile "org.jboss.errai:errai-data-binding:$erraiVersion"
+    compile "org.jboss.errai:errai-navigation:$erraiVersion"
+    compile "org.jboss.errai:errai-tools:$erraiVersion"
+    compile "org.jboss.errai:errai-ui:$erraiVersion"
+    compile "org.jboss.errai:errai-html5:$erraiVersion"
+    compile "org.jboss.errai:errai-cdi-client:$erraiVersion"
+    compile "org.jboss.errai:errai-bus-jsr356-websocket:$erraiVersion"
 
     testCompile "junit:junit:$junitVersion"
     testCompile "org.spockframework:spock-core:$spockVersion"
@@ -96,10 +96,16 @@ tasks.withType(de.richsource.gradle.plugins.gwt.AbstractGwtActionTask) {
 
     //args "-logLevel", "TRACE"
     args "-generateJsInteropExports"
-    args "-noprecompile"
 
     // I've had various problems with this cache and GWT snapshot updates, so it's a good idea to make it easily cleanable
     jvmArgs("-Dgwt.persistentunitcachedir=$project.buildDir/gwt/cache")
+
+    // There is _another_ GWT codeserver cache we can't clean automatically, the only solution is to override TMPDIR
+    // On OS X it's /var/folders/vn/*/T/gwt-cache-*/gwt-rebuildCache
+    jvmArgs("-Djava.io.tmpdir=$project.buildDir/tmp")
+}
+tasks.withType(de.richsource.gradle.plugins.gwt.GwtSuperDev) {
+    args "-noprecompile"
 }
 
 clean.doFirst {
