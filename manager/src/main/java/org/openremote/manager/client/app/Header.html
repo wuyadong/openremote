@@ -1,18 +1,6 @@
-<div class="header">
+<div>
 
     <style scoped is="custom-style">
-        .header {
-            align-items: center;
-            display: flex;
-            display: -webkit-flex;
-        }
-
-        .navigation {
-            display: flex;
-            display: -webkit-flex;
-            align-items: center;
-            -webkit-align-items: center;
-        }
 
         .navigation .item {
             cursor: pointer;
@@ -58,14 +46,14 @@
 
     </style>
 
-    <div class="navigation northWest">
+    <div class="layout horizontal center navigation northWest">
         <paper-button id="navLogo" class="item">
             <iron-icon icon="or:logo" style="width: 2em; height: 2em; margin-right: 0.4em;"></iron-icon>
             <span>Inventory</span>
         </paper-button>
     </div>
 
-    <div class="navigation north">
+    <div class="layout horizontal center center-justified navigation north">
         <paper-button id="locate" class="item">
             <iron-icon icon="maps:map" style="width: 1.4em; height: 1.4em;"></iron-icon>
             <span>Locate</span>
@@ -80,7 +68,7 @@
         </paper-button>
     </div>
 
-    <div class="navigation northEast">
+    <div class="layout horizontal center navigation northEast">
         <div id="notificationsToolbar"></div>
         <paper-button class="item userControl" style="min-width:1em;">
             TestUser

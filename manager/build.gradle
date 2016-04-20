@@ -42,7 +42,6 @@ dependencies {
     compile "org.jboss.errai:errai-ui:$erraiVersion"
     compile "org.jboss.errai:errai-html5:$erraiVersion"
     compile "org.jboss.errai:errai-cdi-client:$erraiVersion"
-    compile "org.jboss.errai:errai-bus-jsr356-websocket:$erraiVersion"
 
     testCompile "junit:junit:$junitVersion"
     testCompile "org.spockframework:spock-core:$spockVersion"

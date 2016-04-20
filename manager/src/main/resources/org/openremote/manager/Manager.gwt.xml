@@ -15,4 +15,7 @@
     -->
     <set-property name="gwt.logging.enabled" value="TRUE"/>
 
+    <source path="client"/>
+    <source path="shared"/>
+
 </module>
