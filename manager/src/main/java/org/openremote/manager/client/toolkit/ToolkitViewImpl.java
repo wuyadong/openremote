@@ -12,8 +12,6 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import static org.openremote.manager.client.app.AppView.NavigationItem.LOCATE;
-
 @Singleton
 @LoadAsync(ToolkitView.class)
 @Templated("../app/AppView.html")
