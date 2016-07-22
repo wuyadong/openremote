@@ -40,7 +40,7 @@ services:
       # The public host name of this OpenRemote installation. This name is used in bearer tokens
       # and must be the name you access the web services under. If you are using Docker Toolbox,
       # this is the IP of a virtual machine running the Linux Docker host (see VirtualBox).
-      IDENTITY_NETWORK_HOST: '192.168.99.100'
+      IDENTITY_NETWORK_HOST: 'localhost'
 
       # The public port of this OpenRemote installation. For simple installations without an
       # HTTP proxy in front of this application, this will be the public webservice host-mapped

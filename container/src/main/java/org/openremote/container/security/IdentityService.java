@@ -71,7 +71,7 @@ public class IdentityService implements ContainerService {
     public static final String IDENTITY_NETWORK_WEBSERVER_PORT = "IDENTITY_NETWORK_WEBSERVER_PORT";
     public static final int IDENTITY_NETWORK_WEBSERVER_PORT_DEFAULT = 8080;
     public static final String KEYCLOAK_HOST = "KEYCLOAK_HOST";
-    public static final String KEYCLOAK_HOST_DEFAULT = "192.168.99.100";
+    public static final String KEYCLOAK_HOST_DEFAULT = "localhost";
     public static final String KEYCLOAK_PORT = "KEYCLOAK_PORT";
     public static final int KEYCLOAK_PORT_DEFAULT = 8081;
     public static final String KEYCLOAK_CONNECT_TIMEOUT = "KEYCLOAK_CONNECT_TIMEOUT";

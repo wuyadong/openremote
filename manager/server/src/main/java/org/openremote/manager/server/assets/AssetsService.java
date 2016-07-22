@@ -42,7 +42,7 @@ public class AssetsService implements ContainerService {
     private static final Logger LOG = Logger.getLogger(AssetsService.class.getName());
 
     public static final String CONTEXTBROKER_HOST = "CONTEXTBROKER_HOST";
-    public static final String CONTEXTBROKER_HOST_DEFAULT = "192.168.99.100";
+    public static final String CONTEXTBROKER_HOST_DEFAULT = "localhost";
     public static final String CONTEXTBROKER_PORT = "CONTEXTBROKER_PORT";
     public static final int CONTEXTBROKER_PORT_DEFAULT = 8082;
     public static final String CONTEXTBROKER_CONNECT_TIMEOUT = "CONTEXTBROKER_CONNECT_TIMEOUT";

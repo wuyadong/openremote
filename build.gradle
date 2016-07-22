@@ -32,8 +32,14 @@ allprojects {
     apply plugin: "com.bmuschko.docker-remote-api"
 
     docker {
-        url = "$System.env.DOCKER_HOST".replace("tcp:", "https:")
-        certPath = new File("$System.env.DOCKER_CERT_PATH")
+        // Set env variable to use Docker Toolbox
+        if (System.env.DOCKER_HOST) {
+            url = "$System.env.DOCKER_HOST".replace("tcp:", "https:")
+            certPath = new File("$System.env.DOCKER_CERT_PATH")
+        } else {
+            // Or use Docker native through local socket
+            url = "unix:///var/run/docker.sock"
+        }
         registryCredentials {
             username = project.properties.dockerHubUsername
             password = project.properties.dockerHubPassword

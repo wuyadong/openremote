@@ -17,13 +17,13 @@
 
 You'll need a Docker host to run this software.
 
-1. Install [Docker Toolbox](https://www.docker.com/products/overview#/docker_toolbox)
+1. Install [Docker Toolbox](https://www.docker.com/products/overview#/docker_toolbox) OR [Docker native](https://www.docker.com/products/docker) (currently beta)
 1. Start Kitematic and open the *Docker CLI*
-1. Get the IP of your Docker host VM with: `docker-machine ip default`
 1. Download [docker-compose-quickstart.yml](https://raw.githubusercontent.com/openremote/openremote/master/docker-compose-quickstart.yml)
 1. Edit this file and review the settings
+1. (Docker Toolbox only) Get the IP of your Docker host VM with: `docker-machine ip default` and set `IDENTITY_NETWORK_HOST` in the quickstart configuration
 1. Deploy the whole stack with: `docker-compose -f docker-compose-quickstart.yml [up|down]`
-1. Open http://DOCKER_HOST_IP:MAPPED_PUBLIC_PORT in your browser (default http://192.168.99.100:8080/)
+1. Open (Docker native) http://localhost:8080 or (Docker Toolbox) http://192.168.99.100:8080/ in your browser
 
 ## Development
 
@@ -45,7 +45,7 @@ Test and sample data will be installed fresh every time you start the server(s).
 
 All services required for development can be deployed with Docker Compose, configured in `docker-compose.yml`. Execute `docker-compose up` in the project root to download required images (this might take a while and give no feedback) and run containers.
 
-The default configuration of all `*Service` classes is for host IP `192.168.99.100`. If this is not your Docker host IP, you must set various environment variables (see [Quickstart](https://raw.githubusercontent.com/openremote/openremote/master/docker-compose-quickstart.yml)).
+The default configuration of all `*Service` classes is for `localhost`. If this is not your Docker host IP, you must set various environment variables (see [Quickstart](https://raw.githubusercontent.com/openremote/openremote/master/docker-compose-quickstart.yml)). 
 
 ### Run GWT code server
 
@@ -67,6 +67,7 @@ Configure your IDE and set up a *Run Configuration*:
 - Module: `manager/server`
 - Working directory: (Set to project root directory)
 - Main class: `org.openremote.manager.server.Server`
+- (Docker Toolbox only) Set environment variables `KEYCLOAK_HOST=192.168.99.100;CONTEXTBROKER_HOST=192.168.99.100`
 
 You can now open http://localhost:8080/ in your browser.
 
@@ -88,6 +89,8 @@ You can extract smaller tilesets with the following procedure:
     http://tools.geofabrik.de/calc/#tab=1 
 1. Extract the region with: 
     `tilelive-copy --minzoom=0 --maxzoom=14 --bounds="BOUNDARY BOX COORDINATES" theworld.mbtiles myextract.mbtiles`
+    
+To generate map icons (packages as sprites with JSON metadata), prepare SVG files and convert them with [spritezero](https://github.com/mapbox/spritezero-cli). The SVG sprites available from [Mapbox GL Styles](https://github.com/mapbox/mapbox-gl-styles) are public domain.
 
 ## Production
 
